@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="board">
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+  <script src="hammer.min.js"></script>
+  <script src="carousel.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="flashText"></div>
+<div class="tinder">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-heart"></i>
+  </div>
+
+  <div>
+    <span id="r"></span>
+    <span id="l"></span>
+  </div>
+  <div>
+    <span id="revenue"></span>
+    <span id="cost"></span>
+  </div>
+  <div>
+    <span id="message"></span>
+  </div>
+  <div>
+    <span id="result"></span>
+  </div>
+
+  <div id="cards-container" class="tinder--cards"></div>
+
+  <div class="tinder--buttons">
+    <button id="nope">
+      N
+      <!-- <i class="fa fa-remove"></i> -->
+    </button>
+    <button id="love">
+      Y
+      <!-- <i class="fa fa-heart"></i> -->
+    </button>
+  </div>
+</div>
+<button class="open-button">
+  Edit data 🙈
+</button>
+<dialog class="modal">
+  
+  <textarea id="editJson" rows="20" cols="100" onchange="updateJson(event)">
+
+  </textarea>
+
+  <button class="close-button">Close</button>
+</dialog>
+<div id="breakeven"></div>
+
+  <script src="plotly.min.js"></script>
+  <script src="hammer.min.js"></script>
+  <script src="tinder.js"></script>
+
+</body>
+</html>
