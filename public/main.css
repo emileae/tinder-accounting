@@ -25,17 +25,30 @@
   user-select: none;
 } */
 
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+html, body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   background: #CCFBFE;
   overflow: auto;
   overflow-x: hidden;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 
 .tinder {
@@ -97,8 +110,10 @@ body {
 .tinder--card {
   display: inline-block;
   width: 90vw;
-  max-width: 400px;
-  height: 70vh;
+  max-width: 20rem;
+  border-radius: 10px;
+  border: 3px solid #000;
+  height: 50vh;
   background: #FFFFFF;
   padding-bottom: 40px;
   border-radius: 8px;
@@ -173,29 +188,69 @@ body {
 
 
 /* ------------------------------ */
+.hidden {
+  display: none;
+}
+#backgroundLogo{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20rem;
+  position: fixed;
+  right: 0;
+  margin: auto;
+}
+#gameOverText{
+  bottom: 5rem;
+  left: 0;
+  width: 35rem;
+  transform: translateY(-10rem);
+  position: fixed;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
 #r{
   position: absolute;
-    right: 50px;
-    top: 50vh;
-    max-width: 200px;
+  left: calc(50% + 13rem);
+  top: 50vh;
+  max-width: 20rem;
 }
 #l{
   position: absolute;
-    left: 50px;
-    top: 50vh;
-    max-width: 200px;
+  right: calc(50% + 13rem);
+  top: 50vh;
+  max-width: 20rem;
+}
+
+.sideText{
+  font-size: 2rem;
 }
 
 #revenue{
   position: absolute;
     right: 50px;
-    top: 30vh;
+    top: 5rem;
     max-width: 200px;
 }
 #cost{
   position: absolute;
     right: 50px;
-    top: 25vh;
+    top: 7rem;
+    max-width: 200px;
+}
+#fixedCost{
+  position: absolute;
+    right: 50px;
+    top: 9rem;
+    max-width: 200px;
+}
+#variableCost{
+  position: absolute;
+    right: 50px;
+    top: 11rem;
     max-width: 200px;
 }
 
@@ -214,10 +269,228 @@ body {
 
 #flashText {
   position: fixed;
-  top: 2rem;
+  top: calc(50% - 15rem);
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
   display: none;
   z-index: 99;
+}
+
+.rotated-right {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.rotated-left {
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.rotated-level {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* BURGER */
+#burgerContainer {
+  position: fixed;
+  left: calc(50% + 20rem);
+  bottom: 5rem;
+  opacity: 0.8;
+}
+
+.burger {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger__buntop,
+.burger__tomato,
+.burger__lettuce,
+.burger__meat {
+  margin-bottom: 0;
+  transition-property: margin-bottom;
+  transition-duration: 500ms;
+}
+
+.burger__buntop:hover,
+.burger__tomato:hover,
+.burger__lettuce:hover,
+.burger__meat:hover {
+  margin-bottom: 2.5vmin;
+  cursor: pointer;
+  transition-property: margin-bottom;
+  transition-duration: 500ms;
+}
+
+.burger__buntop {
+  width: 15vmin;
+  height: 5vmin;
+  border-radius: 30vmin 30vmin 3vmin 3vmin;
+  background-color: #ee9d2e;
+  position: relative;
+  top: 1vmin;
+}
+
+.burger__tomato {
+  width: 14vmin;
+  height: 1.8vmin;
+  border-bottom: 0.5vmin solid #af3030;
+  background-color: #b4322e;
+  border-radius: 0.8vmin;
+  position: relative;
+  top: 1vmin;
+}
+
+.burger__lettuce {
+  width: 14vmin;
+  height: 1.5vmin;
+  border-radius: 0.8vmin;
+  background-color: #72b43e;
+  position: relative;
+  top: 1vmin;
+  z-index: 2;
+}
+
+.lettuce1,
+.lettuce2,
+.lettuce3,
+.lettuce4,
+.lettuce5 {
+  width: 4.8vmin;
+  height: 2.5vmin;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #72b43e;
+  top: 0vmin;
+}
+
+.lettuce1 {
+  right: 0.1vmin;
+}
+
+.lettuce2 {
+  right: 2.5vmin;
+}
+
+.lettuce3 {
+  right: 6vmin;
+}
+
+.lettuce4 {
+  right: 9.5vmin;
+}
+
+.lettuce5 {
+  right: 10.19vmin;
+}
+
+.burger__cheese {
+  width: 14vmin;
+  height: 2vmin;
+  border-radius: 2vmin;
+  background-color: #f2d658;
+  position: relative;
+  top: 1.3vmin;
+  z-index: 1;
+}
+
+.cheese__melt {
+  width: 2vmin;
+  height: 1vmin;
+  border-radius: 0 0 1vmin;
+  background-color: #f2d658;
+  position: absolute;
+  top: 1.2vmin;
+}
+
+.cheese__melt1,
+.cheese__melt2,
+.cheese__melt3 {
+  width: 1.4vmin;
+  height: 2vmin;
+  border-radius: 1vmin;
+  background-color: #f2d658;
+  position: absolute;
+  top: 0.5vmin;
+  /* border: 1px solid pink; */
+  animation-name: melting;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
+
+.cheese__melt2 {
+  height: 1.2vmin;
+  left: 6.7vmin;
+}
+
+.cheese__melt3 {
+  height: 1.5vmin;
+  left: 3.3vmin;
+}
+
+.cheese__melt4 {
+  height: 0.6vmin;
+  width: 0.6vmin;
+  background-color: #f2d658;
+  position: relative;
+  top: 2vmin;
+  left: 7.9vmin;
+}
+
+/* cheese round spaces */
+
+.cheese__space,
+.cheese__space1 {
+  width: 2.01vmin;
+  height: 1.2vmin;
+  border-radius: 100%;
+  background-color: #6f4718;
+  position: absolute;
+  top: 1.25vmin;
+  left: 1.35vmin;
+}
+
+.cheese__space1 {
+  width: 2vmin;
+  left: 4.6vmin;
+}
+
+.cheese__space2 {
+  width: 1vmin;
+  height: 1vmin;
+  border-radius: 100%;
+  left: 8.1vmin;
+  top: 1.4vmin;
+  background-color: #6f4718;
+  position: relative;
+}
+
+@keyframes melting {
+  to {
+      top: 0.9vmin;
+  }
+}
+
+.burger__meat {
+  width: 14vmin;
+  height: 2.5vmin;
+  border-radius: 50vmin;
+  background-color: #6f4718;
+  position: relative;
+  top: 1vmin;
+}
+
+.burger__bunbottom {
+  width: 14.2vmin;
+  height: 2.5vmin;
+  border-radius: 2vmin 2vmin 50vmin 50vmin;
+  background-color: #ee9d2e;
+  position: relative;
+  top: 0.9vmin;
 }
