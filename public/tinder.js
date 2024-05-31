@@ -650,6 +650,8 @@ allCards.forEach(function (el) {
           document.getElementById("backgroundLogo").classList.remove('hidden');
           document.getElementById("gameOverText").innerHTML = "You're not worth g<sup>2</sup>'s time, try group 5!"
         }
+        l.classList.add('hidden');
+        r.classList.add('hidden')
       }else{
         updateOptions(isRight);
       }
