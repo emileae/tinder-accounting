@@ -1,268 +1,5 @@
 'use strict';
 
-// var json = [
-//   {
-//     "title": "Pricing Dilemma!",
-//     "description": "How should we price our vintage Nappa Valley Wine",
-//     "l": "Based on what it costs",
-//     "r": "Based on what the market will pay",
-//     "rCost": 500,
-//     "lCost": 0,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": -100,
-//     "lRevenue": 10,
-//     "rMessage": "Great choice, you know your customers are willing to pay!",
-//     "lMessage": "You're missing out on margins!!"
-//   },
-//   {
-//     "title": "Powerpoint!",
-//     "description": "You need to make a presentation of max. 10 slides what should you do?",
-//     "r": "Create a presentation of 15 slides",
-//     "l": "Create a presentation of 10 slides",
-//     "rCost": 500,
-//     "lCost": 0,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": -100,
-//     "lRevenue": 10,
-//     "rMessage": "Lets see if they notice, hehe",
-//     "lMessage": "Boring!"
-//   },
-//   {
-//     "title": "Scaling",
-//     "description": "Your bakery is experiencing an increase in demand, you want to scale your bun production. How should you scale?",
-//     "r": "Buy a HUGE oven (scale vertically)",
-//     "l": "Buy a few more ovens (scale horizontally)",
-//     "rCost": 100,
-//     "lCost": 20,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 90,
-//     "lRevenue": 100,
-//     "rMessage": "Go big or go home!!!",
-//     "lMessage": "Now we're cookin'"
-//   },
-//   {
-//     "title": "Automation Upgrade",
-//     "description": "To improve efficiency, your factory is considering automation. Which investment is better?",
-//     "r": "Invest in advanced AI systems",
-//     "l": "Upgrade to semi-automatic machinery",
-//     "rCost": 200,
-//     "lCost": 50,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 250,
-//     "lRevenue": 70,
-//     "rMessage": "Futuristic efficiency!",
-//     "lMessage": "A solid step forward!"
-//   },
-//   {
-//     "title": "Staff Training",
-//     "description": "Your company's customer service ratings are low. How should you improve?",
-//     "r": "Hire a professional trainer",
-//     "l": "Create an online training module",
-//     "rCost": 40,
-//     "lCost": 15,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 50,
-//     "lRevenue": 20,
-//     "rMessage": "Team expertise enhanced!",
-//     "lMessage": "Self-paced improvement!"
-//   },
-//   {
-//     "title": "Inventory Management",
-//     "description": "Inventory discrepancies are causing losses. How do you want to manage inventory?",
-//     "r": "Implement a RFID system",
-//     "l": "Increase manual stock checks",
-//     "rCost": 100,
-//     "lCost": 10,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 80,
-//     "lRevenue": 30,
-//     "rMessage": "Tech to the rescue!",
-//     "lMessage": "Keeping it traditional!"
-//   }
-//   ,
-//   {
-//     "title": "Product Diversification",
-//     "description": "Sales are stagnating with current products. How do you diversify?",
-//     "r": "Add a new product line",
-//     "l": "Enhance existing products",
-//     "rCost": 150,
-//     "lCost": 70,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 200,
-//     "lRevenue": 100,
-//     "rMessage": "New horizons ahead!",
-//     "lMessage": "Old is gold, but better!"
-//   }
-//   ,
-//   {
-//     "title": "Marketing Campaigns",
-//     "description": "Market competition is intense. How do you want to boost your marketing?",
-//     "r": "Launch a viral social media campaign",
-//     "l": "Invest in local advertisements",
-//     "rCost": 70,
-//     "lCost": 30,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 100,
-//     "lRevenue": 40,
-//     "rMessage": "We're trending!",
-//     "lMessage": "Locals love us!"
-//   },
-//   {
-//     "title": "Pricing Dilemma!",
-//     "description": "How should we price our vintage Nappa Valley Wine",
-//     "l": "Based on what it costs",
-//     "r": "Based on what the market will pay",
-//     "rCost": 500,
-//     "lCost": 0,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": -100,
-//     "lRevenue": 10,
-//     "rMessage": "Great choice, you know your customers are willing to pay!",
-//     "lMessage": "You're missing out on margins!!"
-//   },
-//   {
-//     "title": "Powerpoint!",
-//     "description": "You need to make a presentation of max. 10 slides what should you do?",
-//     "r": "Create a presentation of 15 slides",
-//     "l": "Create a presentation of 10 slides",
-//     "rCost": 500,
-//     "lCost": 0,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": -100,
-//     "lRevenue": 10,
-//     "rMessage": "Lets see if they notice, hehe",
-//     "lMessage": "Boring!"
-//   },
-//   {
-//     "title": "Scaling",
-//     "description": "Your bakery is experiencing an increase in demand, you want to scale your bun production. How should you scale?",
-//     "r": "Buy a HUGE oven (scale vertically)",
-//     "l": "Buy a few more ovens (scale horizontally)",
-//     "rCost": 100,
-//     "lCost": 20,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 90,
-//     "lRevenue": 100,
-//     "rMessage": "Go big or go home!!!",
-//     "lMessage": "Now we're cookin'"
-//   },
-//   {
-//     "title": "Automation Upgrade",
-//     "description": "To improve efficiency, your factory is considering automation. Which investment is better?",
-//     "r": "Invest in advanced AI systems",
-//     "l": "Upgrade to semi-automatic machinery",
-//     "rCost": 200,
-//     "lCost": 50,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 250,
-//     "lRevenue": 70,
-//     "rMessage": "Futuristic efficiency!",
-//     "lMessage": "A solid step forward!"
-//   },
-//   {
-//     "title": "Staff Training",
-//     "description": "Your company's customer service ratings are low. How should you improve?",
-//     "r": "Hire a professional trainer",
-//     "l": "Create an online training module",
-//     "rCost": 40,
-//     "lCost": 15,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 50,
-//     "lRevenue": 20,
-//     "rMessage": "Team expertise enhanced!",
-//     "lMessage": "Self-paced improvement!"
-//   },
-//   {
-//     "title": "Inventory Management",
-//     "description": "Inventory discrepancies are causing losses. How do you want to manage inventory?",
-//     "r": "Implement a RFID system",
-//     "l": "Increase manual stock checks",
-//     "rCost": 100,
-//     "lCost": 10,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 80,
-//     "lRevenue": 30,
-//     "rMessage": "Tech to the rescue!",
-//     "lMessage": "Keeping it traditional!"
-//   }
-//   ,
-//   {
-//     "title": "Product Diversification",
-//     "description": "Sales are stagnating with current products. How do you diversify?",
-//     "r": "Add a new product line",
-//     "l": "Enhance existing products",
-//     "rCost": 150,
-//     "lCost": 70,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 200,
-//     "lRevenue": 100,
-//     "rMessage": "New horizons ahead!",
-//     "lMessage": "Old is gold, but better!"
-//   }
-//   ,
-//   {
-//     "title": "Marketing Campaigns",
-//     "description": "Market competition is intense. How do you want to boost your marketing?",
-//     "r": "Launch a viral social media campaign",
-//     "l": "Invest in local advertisements",
-//     "rCost": 70,
-//     "lCost": 30,
-//     "rFixedCost": 500,
-//     "lFixedCost": 0,
-//     "rVariableCost": 500,
-//     "lVariableCost": 0,
-//     "rRevenue": 100,
-//     "lRevenue": 40,
-//     "rMessage": "We're trending!",
-//     "lMessage": "Locals love us!"
-//   }
-// ];
-
 var json = [
   {
     "title": "Pricing Dilemma",
@@ -480,10 +217,8 @@ var currentBurgerLayer = 0;
 var currentIndex = 0;
 var burgerLayers = 1;
 
-
-function updateOptions(isRight){
-  r.innerHTML = json[currentIndex].rightOption;
-  l.innerHTML = json[currentIndex].leftOption;
+function handleSwipeLogic(isRight){
+  console.log('currentIndex: ', currentIndex)
   if (isRight){
     animateText(json[currentIndex-1].rightOutcome)
     insertHTMLAfter(burgerSections[burgerLayerIndex](currentIndex), burgerTop);
@@ -495,6 +230,13 @@ function updateOptions(isRight){
     animateText(json[currentIndex-1].leftOutcome)
     removeNextElement();
   }
+}
+
+
+function updateOptions(isRight){
+  r.innerHTML = json[currentIndex].rightOption;
+  l.innerHTML = json[currentIndex].leftOption;
+  handleSwipeLogic(isRight);
 }
 
 function insertHTMLAfter(newHTML, existingElement) {
@@ -641,32 +383,47 @@ allCards.forEach(function (el) {
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
 
-      currentIndex += 1;
+      // currentIndex += 1;
       var isRight = event.deltaX > 0;
-      if (currentIndex >= json.length){
-        if (burgerLayers >= 1){
-          document.getElementById("backgroundLogo").classList.remove('hidden');
-        }else{
-          document.getElementById("backgroundLogo").classList.remove('hidden');
-          document.getElementById("gameOverText").innerHTML = "You're not worth g<sup>2</sup>'s time, try group 5!"
-        }
-        l.classList.add('hidden');
-        r.classList.add('hidden')
-      }else{
-        updateOptions(isRight);
-      }
-
-      // Log swipe direction
-      if (event.deltaX > 0) {
-        console.log('right');
-      } else {
-        console.log('left');
-      }
+      swipeHandler(isRight);
+      // if (currentIndex >= json.length){
+      //   if (burgerLayers >= 1){
+      //     document.getElementById("backgroundLogo").classList.remove('hidden');
+      //   }else{
+      //     document.getElementById("backgroundLogo").classList.remove('hidden');
+      //     document.getElementById("gameOverText").innerHTML = "You're not worth g<sup>2</sup>'s time, try group 5!"
+      //   }
+      //   l.classList.add('hidden');
+      //   r.classList.add('hidden')
+      // }else{
+      //   updateOptions(isRight);
+      // }
 
       initCards();
     }
   });
 });
+
+function swipeHandler(isRight){
+  currentIndex += 1;
+  if (currentIndex >= json.length){
+    if (burgerLayers >= 1){
+      document.getElementById("backgroundLogo").classList.remove('hidden');
+    }else{
+      document.getElementById("backgroundLogo").classList.remove('hidden');
+      document.getElementById("gameOverText").innerHTML = "You're not worth g<sup>2</sup>'s time, try group 5!"
+    }
+    l.classList.add('hidden');
+    r.classList.add('hidden');
+
+    document.getElementById("nope").classList.add('hidden');
+    document.getElementById("love").classList.add('hidden');
+    document.getElementById("resetButton").classList.remove('hidden');
+    document.getElementById("results-arrow").classList.remove('hidden');
+  }else{
+    updateOptions(isRight);
+  }
+}
 
 function createButtonListener(love) {
   return function (event) {
@@ -682,9 +439,13 @@ function createButtonListener(love) {
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
       console.log('right');
+      swipeHandler(true);
+      handleSwipeLogic(true);
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
       console.log('left');
+      swipeHandler(false);
+      handleSwipeLogic(false);
     }
 
     initCards();
@@ -720,5 +481,5 @@ function animateText(text) {
   flashTextElement.style.display = 'block';
   setTimeout(() => {
       flashTextElement.style.display = 'none';
-  }, 3000);
+  }, 10000);
 }
